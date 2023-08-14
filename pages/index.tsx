@@ -9,18 +9,22 @@ import utilStyles from '../styles/utils.module.css';
 
 import { getSortedPostsData } from '../lib/posts';
 
-export default function Home({ allPostsData }: { allPostsData: {
-  id: string,
-  date: string,
-  title: string
-}[] }) {
+export default function Home({
+  allPostsData,
+}: {
+  allPostsData: {
+    id: string;
+    date: string;
+    title: string;
+  }[];
+}) {
   return (
     <Layout home>
       <Head>
         <title>{siteTitle}</title>
       </Head>
       <section className={utilStyles.headingMd}>
-        <p>Franchement flemme de m'introduire</p>
+        <p>Franchement flemme de m&apos;introduire</p>
         <p>
           (This is a sample website - you’ll be building a site like this on{' '}
           <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
@@ -47,6 +51,6 @@ export default function Home({ allPostsData }: { allPostsData: {
 export const getStaticProps: GetStaticProps = async () => {
   const allPostsData = getSortedPostsData();
   return {
-    props: { allPostsData }
+    props: { allPostsData },
   };
 };
